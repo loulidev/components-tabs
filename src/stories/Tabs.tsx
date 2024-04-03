@@ -1,6 +1,8 @@
-import React, {useState, useContext, createContext} from "react";
+import React, { useState, useContext, createContext } from "react";
 
-const ActiveTabContext = createContext<[string, React.Dispatch<React.SetStateAction<string>>]>(['', () => {}]);
+const ActiveTabContext = createContext<
+  [string, React.Dispatch<React.SetStateAction<string>>]
+>(["", () => {}]);
 
 //Tab component represents an individual tab within the tab list.
 //Its role is to handle click events and notify the Tabs component when it's clicked.
@@ -9,17 +11,18 @@ interface TabProps {
   label: string;
 }
 
-export const Tab: React.FC<TabProps> = ({ id, label}) => {
+export const Tab: React.FC<TabProps> = ({ id, label }) => {
   const [, setActiveId] = useContext(ActiveTabContext);
 
   const handleOnClick = () => {
-      setActiveId(id);    };
+    setActiveId(id);
+  };
   return (
-      <button type="button" onClick={handleOnClick}>
+    <button type="button" onClick={handleOnClick}>
       {label}
-      </button>
+    </button>
   );
-}
+};
 
 //TabPanel component responsible for displaying the content associated with a tab.
 // It should be associated with a specific tab and only be visible when that tab is active.
@@ -30,10 +33,10 @@ interface TabPanelProps {
 
 export const TabPanel: React.FC<TabPanelProps> = ({ whenActive, children }) => {
   const [activeId] = useContext(ActiveTabContext);
-  return <div hidden={whenActive!==activeId}>{children}</div>;
+  return whenActive === activeId && <div>{children}</div>;
 };
 
-//Tabs component parent component to hold the state of the active tab and provide it to the Tab and TabPanel components. (orchestration) 
+//Tabs component parent component to hold the state of the active tab and provide it to the Tab and TabPanel components. (orchestration)
 interface TabsProps {
   children: React.ReactNode;
   defaultActiveId: string;
