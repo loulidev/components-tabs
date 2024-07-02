@@ -1,3 +1,3 @@
-export * from "./Tab";
-export * from "./TabPanel";
-export * from "./Tabs";
+export { Tab } from "./Tab";
+export { Tabs } from "./Tabs";
+export { TabPanel } from "./TabPanel";

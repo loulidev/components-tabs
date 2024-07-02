@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import ActiveTabContext from "../context/ActiveTabContext";
+import ActiveTabContext from "../../context/ActiveTabContext";
 
 interface TabPanelProps {
   whenActive: string;

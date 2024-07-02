@@ -1,11 +1,9 @@
 import type { Meta, StoryObj } from "@storybook/react";
-
-import { Tabs, Tab, TabPanel } from "../components";
+import { TabPanel, Tabs, Tab } from "../components";
 
 const meta: Meta<typeof Tabs> = {
-  title: "Example/Tabs",
+  title: "Tabs",
   component: Tabs,
-  subcomponents: { Tab, TabPanel },
   parameters: {
     layout: "centered",
   },

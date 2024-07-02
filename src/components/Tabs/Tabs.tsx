@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import ActiveTabContext from "../context/ActiveTabContext";
+import ActiveTabContext from "../../context/ActiveTabContext";
 
 interface TabsProps {
   children: React.ReactNode;

@@ -1,6 +1,6 @@
 import { useContext } from "react";
-import ActiveTabContext from "../context/ActiveTabContext";
-import "../styles/TabStyles.css";
+import ActiveTabContext from "../../context/ActiveTabContext";
+import "./TabStyles.css";
 
 interface TabProps {
   id: string;
