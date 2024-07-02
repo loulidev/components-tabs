@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import ActiveTabContext from "../../context/ActiveTabContext";
+import "./TabsStyles.css";
 
 interface TabsProps {
   children: React.ReactNode;
@@ -11,7 +12,7 @@ export const Tabs: React.FC<TabsProps> = ({ children, defaultActiveId }) => {
 
   return (
     <ActiveTabContext.Provider value={[activeId, setActiveId]}>
-      {children}
+      <section className="tabs-container">{children}</section>
     </ActiveTabContext.Provider>
   );
 };

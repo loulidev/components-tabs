@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import ActiveTabContext from "../../context/ActiveTabContext";
+import "./TabPanelStyles.css";
 
 interface TabPanelProps {
   whenActive: string;
@@ -8,5 +9,9 @@ interface TabPanelProps {
 
 export const TabPanel: React.FC<TabPanelProps> = ({ whenActive, children }) => {
   const [activeId] = useContext(ActiveTabContext);
-  return whenActive === activeId && <div>{children}</div>;
+  return (
+    whenActive === activeId && (
+      <article className="tab-content">{children}</article>
+    )
+  );
 };
