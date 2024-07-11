@@ -24,8 +24,12 @@ describe("Tabs", () => {
     render(
       <Tabs defaultActiveId="2">
         <TabsList>
-          <Tab id="1" label="Tab 1" />
-          <Tab id="2" label="Tab 2" />
+          <Tab id="1">
+            <p>Tab 1</p>
+          </Tab>
+          <Tab id="2">
+            <p>Tab 2</p>
+          </Tab>
         </TabsList>
       </Tabs>
     );
@@ -44,8 +48,12 @@ describe("Tabs", () => {
       <ActiveTabContext.Provider value={["1", () => {}]}>
         <Tabs defaultActiveId="1">
           <TabsList>
-            <Tab id="1" label="Tab 1" />
-            <Tab id="2" label="Tab 2" />
+            <Tab id="1">
+              <p>Tab 1</p>
+            </Tab>
+            <Tab id="2">
+              <p>Tab 2</p>
+            </Tab>
           </TabsList>
         </Tabs>
       </ActiveTabContext.Provider>

@@ -4,12 +4,12 @@ import "./TabStyles.css";
 
 interface TabProps {
   id: string;
-  label: string;
   onClick?: () => void;
   style?: React.CSSProperties;
+  children: React.ReactNode;
 }
 
-export const Tab: React.FC<TabProps> = ({ id, label, onClick, style }) => {
+export const Tab: React.FC<TabProps> = ({ id, children, onClick, style }) => {
   const [activeId, setActiveId] = useContext(ActiveTabContext);
 
   const handleOnClick = () => {
@@ -17,13 +17,15 @@ export const Tab: React.FC<TabProps> = ({ id, label, onClick, style }) => {
     setActiveId(id);
   };
   return (
-    <button
-      type="button"
-      onClick={handleOnClick}
-      className={`tab-button ${activeId === id ? "active" : ""}`}
-      style={style}
-    >
-      {label}
-    </button>
+    <li>
+      <button
+        type="button"
+        onClick={handleOnClick}
+        className={`tab-button ${activeId === id ? "active" : ""}`}
+        style={style}
+      >
+        {children}
+      </button>
+    </li>
   );
 };

@@ -6,9 +6,15 @@ describe("TabsList", () => {
   it("should render the children components", () => {
     render(
       <TabsList>
-        <Tab id="1" label="Tab 1" />
-        <Tab id="2" label="Tab 2" />
-        <Tab id="3" label="Tab 3" />
+        <Tab id="1">
+          <p>Tab 1</p>
+        </Tab>
+        <Tab id="2">
+          <p>Tab 2</p>
+        </Tab>
+        <Tab id="3">
+          <p>Tab 3</p>
+        </Tab>
       </TabsList>
     );
 
