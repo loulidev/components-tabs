@@ -4,7 +4,7 @@ import userEvent from "@testing-library/user-event";
 
 describe("Tab", () => {
   it("should render a button with the provided label", () => {
-    render(<Tab id="1" label="Tab 1" />);
+    render(<Tab id="1"> Tab 1 </Tab>);
 
     const button = screen.getByRole("button");
 
@@ -16,7 +16,11 @@ describe("Tab", () => {
     const user = userEvent.setup();
     const onClick = vi.fn();
 
-    render(<Tab id="1" label="Tab 1" onClick={onClick} />);
+    render(
+      <Tab id="1" onClick={onClick}>
+        Tab 1{" "}
+      </Tab>
+    );
 
     const button = screen.getByRole("button");
     await user.click(button);

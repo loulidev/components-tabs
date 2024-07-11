@@ -1,5 +1,9 @@
 .tab-button {
-  padding: 0.625rem 1.25rem;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  column-gap: 0.25rem;
+  padding: 0.5rem 1rem;
   border: none;
   color: #1976d2;
   background-color: transparent;
@@ -15,4 +19,13 @@
 
 .tab-button:focus {
   outline: none;
+}
+
+.tab-button:hover {
+  color: #2196f3;
+}
+
+.tab-button.disabled {
+  color: #9e9e9e;
+  cursor: not-allowed;
 }

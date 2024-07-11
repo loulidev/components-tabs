@@ -7,9 +7,16 @@ interface TabProps {
   onClick?: () => void;
   style?: React.CSSProperties;
   children: React.ReactNode;
+  disabled?: boolean;
 }
 
-export const Tab: React.FC<TabProps> = ({ id, children, onClick, style }) => {
+export const Tab: React.FC<TabProps> = ({
+  id,
+  children,
+  onClick,
+  style,
+  disabled,
+}) => {
   const [activeId, setActiveId] = useContext(ActiveTabContext);
 
   const handleOnClick = () => {
@@ -17,11 +24,14 @@ export const Tab: React.FC<TabProps> = ({ id, children, onClick, style }) => {
     setActiveId(id);
   };
   return (
-    <li>
+    <li className="tab-item">
       <button
+        disabled={disabled}
         type="button"
         onClick={handleOnClick}
-        className={`tab-button ${activeId === id ? "active" : ""}`}
+        className={`tab-button ${activeId === id ? "active" : ""} ${
+          disabled ? "disabled" : ""
+        }`}
         style={style}
       >
         {children}
