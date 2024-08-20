@@ -34,11 +34,11 @@ describe("Tabs", () => {
       </Tabs>
     );
 
-    const tab1 = screen.getByText("Tab 1");
-    const tab2 = screen.getByText("Tab 2");
+    const tab1 = screen.getByText("Tab 1").parentElement;
+    const tab2 = screen.getByText("Tab 2").parentElement;
 
-    expect(tab1).toHaveClass("tab-button");
-    expect(tab2).toHaveClass("tab-button active");
+    expect(tab1).not.toHaveClass("active");
+    expect(tab2).toHaveClass("active");
   });
 
   it("should update the active tab when a tab is clicked", async () => {
@@ -59,13 +59,13 @@ describe("Tabs", () => {
       </ActiveTabContext.Provider>
     );
 
-    const tab1 = screen.getByText("Tab 1");
-    const tab2 = screen.getByText("Tab 2");
+    const tab1 = screen.getByText("Tab 1").parentElement;
+    const tab2 = screen.getByText("Tab 2").parentElement;
 
     expect(tab1).toHaveClass("tab-button active");
     expect(tab2).toHaveClass("tab-button");
 
-    await user.click(tab2);
+    await user.click(tab2!);
     expect(tab1).toHaveClass("tab-button");
     expect(tab2).toHaveClass("tab-button active");
   });
