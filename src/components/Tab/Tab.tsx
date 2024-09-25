@@ -24,7 +24,7 @@ export const Tab: React.FC<TabProps> = ({
     setActiveId(id);
   };
   return (
-    <li className="tab-item">
+    <li className="tab-item" style={style}>
       <button
         disabled={disabled}
         type="button"
