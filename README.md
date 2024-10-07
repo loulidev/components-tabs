@@ -6,7 +6,6 @@ Tabulous is a flexible and easy-to-use Tabs component library for React. It uses
 
 - [Installation](#installation)
 - [Usage](#usage)
-- [How It Works](#how-it-works)
 
 ## Installation
 
@@ -26,21 +25,15 @@ import { Tabs, Tab, TabPanel, TabsList } from "tabulous";
 
 function App() {
   return (
-    <Tabs>
+    <Tabs defaultActiveId={"1"}>
       <TabsList>
-        <Tab>Tab 1</Tab>
-        <Tab>Tab 2</Tab>
-        <Tab>Tab 3</Tab>
+        <Tab id="1">Tab 1</Tab>
+        <Tab id="2">Tab 2</Tab>
+        <Tab id="3">Tab 3</Tab>
       </TabsList>
-      <TabPanel>
-        <h2>Content for Tab 1</h2>
-      </TabPanel>
-      <TabPanel>
-        <h2>Content for Tab 2</h2>
-      </TabPanel>
-      <TabPanel>
-        <h2>Content for Tab 3</h2>
-      </TabPanel>
+      <TabPanel whenActive="1">Content for Tab 1</TabPanel>
+      <TabPanel whenActive="2">Content for Tab 2</TabPanel>
+      <TabPanel whenActive="3">Content for Tab 3</TabPanel>
     </Tabs>
   );
 }
