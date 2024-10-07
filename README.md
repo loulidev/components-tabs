@@ -2,18 +2,33 @@
 
 Tabulous is a flexible and easy-to-use Tabs component library for React. It uses compound components to manage state and rendering efficiently. This README will guide you through the setup, usage, and internals of the Tabulous component.
 
-## Table of Contents
-
-- [Installation](#installation)
-- [Usage](#usage)
-
 ## Installation
 
-To install Tabulous, run:
+To set up Tabulous, follow these steps:
 
-````bash
-yarn add tabulous```
-````
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/loulidev/components-tabs
+   cd components-tabs
+   ```
+
+2. Install the dependencies:
+
+   ```bash
+   yarn install
+   ```
+
+3. To start the development server:
+
+   ```bash
+   yarn dev
+   ```
+
+4. To run Storybook:
+   ```bash
+   yarn storybook
+   ```
 
 ## Usage
 
