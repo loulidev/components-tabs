@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import ActiveTabContext from "../../context/ActiveTabContext";
 import "./TabsStyles.css";
 
-interface TabsProps {
+export interface TabsProps {
   children: React.ReactNode;
   defaultActiveId: string;
 }
